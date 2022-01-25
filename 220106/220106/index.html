@@ -64,14 +64,16 @@
 	<span class="token keyword">const</span> <span class="token punctuation">[</span>openPopup<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">usePopup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token comment">// 훅 외부에 핵심 데이터를 명시하여 해당 기능의 역할을 파악하기 쉽게 작성</span>
 	<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> confirmed <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">openPopup</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      title<span class="token operator">:</span> <span class="token string">"보험 질문하기"</span><span class="token punctuation">,</span>
-      contents<span class="token operator">:</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>전문가가 설명드려오<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>confirmed<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">await</span> <span class="token function">submitQuestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    	<span class="token keyword">const</span> confirmed <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">openPopup</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      		title<span class="token operator">:</span> <span class="token string">"보험 질문하기"</span><span class="token punctuation">,</span>
+      		contents<span class="token operator">:</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>전문가가 설명드려오<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    	<span class="token keyword">if</span> <span class="token punctuation">(</span>confirmed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      		<span class="token keyword">await</span> <span class="token function">submitQuestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token punctuation">}</span>
 	<span class="token punctuation">}</span>
+	
 	<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">submitQuestion</span><span class="token punctuation">(</span><span class="token parameter">연결전문가</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 		<span class="token keyword">await</span> <span class="token function">질문전송</span><span class="token punctuation">(</span>연결전문가<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
 		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"질문을 전송했습니다"</span><span class="token punctuation">)</span>
