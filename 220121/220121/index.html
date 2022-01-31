@@ -2,7 +2,29 @@
 <p>UI와 로직을 분리하는 형태로 리액트 프로젝트 구조를 만들기에 적합한 전역 상태관리 라이브러리를 찾아보게 되었고 Recoil을 찾게 되었습니다.</p>
 <p>또한 사용성을 위해 React의 Suspense 사용을 고려하고 있었기 때문에, loading state를 따로 관리해야하는 Redux보다 동시성 모드를 지원하는 Recoil로 사용하는 것이 적합하다고 생각했습니다.</p>
 <p>무엇보다, Redux에서는 추가적인 api로 구현되었던 비동기 처리나 캐싱을 Recoil에서는 자체적으로 selector에서 지원을 해준다는 점은 쉬운 러닝커브와 맞물려 좋은 선택이라고 생각했습니다.</p>
+<h3>Recoil의 철학</h3>
+<p>보일러 플레이트가 적은 API이면서 React의 로컬 상태(useState, useReducer)와 유사한 간단한 인터페이스</p>
+<p>코드 상호간의 낮은 결합도를 통해 Code Splitting의 용의성을 확보할 수 있다.</p>
+<p>파생 데이터를 사용함으로써 데이터를 사용하는 컴포넌트에서 임의로 데이터를 바꾸는 로직을 가져가지 않아도 된다.</p>
+<h3>Core Concept</h3>
+<ul>
+<li>Flexible shared state: 유연하게 상태 관리</li>
+<li>Derived data and queries: 파생 데이터 생성이 용이</li>
+<li>App-wide state observation: 애플리케이션 단의 상태 Observation 가능</li>
+</ul>
 <h1>2. 주요 개념</h1>
+<h3>상태관리란 무엇인가</h3>
+<ul>
+<li>상태란: 애플리케이션의 동작 방식을 설명하는 모든 데이터</li>
+<li>관리란
+<ul>
+<li>최초 값(initial value)를 저장</li>
+<li>현재 값(current value)를 읽기</li>
+<li>값을 업데이트</li>
+</ul>
+</li>
+</ul>
+<p>기존 Context API는 확정되지 않은 수의 값을 저장하는데 적합하지 않다. State 관리라기보다 개념상 의존성 주입(dependency injection)에 가깝다.</p>
 <h3>Atoms</h3>
 <p>Atoms는 상태의 단위이며, 업데이트와 구독이 가능합니다. atom이 업데이트되면 각각의 구독된 컴포넌트는 새로운 값을 반영하여 다시 렌더링됩니다. atoms는 런타임에서 생성될 수도 있습니다. 동일한 atom이 여러 컴포넌트에서 사용되는 경우에는 모든 컴포넌트는 상태를 공유합니다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> themeState <span class="token operator">=</span> <span class="token function">atom</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
