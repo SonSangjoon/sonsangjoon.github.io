@@ -9,6 +9,14 @@
 <p>외부 데이터에 구독(subscription)을 설정해야 하는 경우를 생각해보겠습니다. 이런 경우에 메모리 누수가 발생하지 않도록 정리(clean-up)하는 것은 매우 중요합니다.</p>
 <h3>관심사를 구분하려고 한다면 Multiple Effect를 사용합니다</h3>
 <p>Hook이 탄생한 동기가 된 문제 중의 하나가 생명주기 class 메서드가 관련이 없는 로직들은 모아놓고, 관련이 있는 로직들은 여러 개의 메서드에 나누어 놓는 문제를 해결하기 위함입니다.</p>
+<h4>Mount or Update</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useEffect(() => console.log('will update any'));</code></pre></div>
+<h4>Unmount or Update</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useEffect(() => () => console.log('will update any or unmount'));</code></pre></div>
+<h4>Update Count</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useEffect(() => console.log('will update count'), [count]);</code></pre></div>
+<h4>#### Update Count or Unmount</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useEffect(() => () => console.log('will update count or unmount'), [count]);</code></pre></div>
 <h1>useMemo</h1>
 <ul>
 <li>메모이제이션 된 값을 반환합니다</li>
