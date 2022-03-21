@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkonshorelog=self.webpackChunkonshorelog||[]).push([[753],{5225:function(t,e,i){i.r(e);i(7294);var r=i(3655),s=i(3431);e.default=function(t){var e=t.data.site.siteMetadata,i=e.title,a=e.description,n=e.siteUrl;return(0,s.tZ)(r.Z,{title:i,description:a,url:n,image:""})}}}]);
+//# sourceMappingURL=component---src-pages-resume-tsx-e5eac02c57019244b631.js.map
