@@ -73,7 +73,7 @@
       		<span class="token keyword">await</span> <span class="token function">submitQuestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     	<span class="token punctuation">}</span>
 	<span class="token punctuation">}</span>
-	
+
 	<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">submitQuestion</span><span class="token punctuation">(</span><span class="token parameter">연결전문가</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 		<span class="token keyword">await</span> <span class="token function">질문전송</span><span class="token punctuation">(</span>연결전문가<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
 		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"질문을 전송했습니다"</span><span class="token punctuation">)</span>
@@ -110,7 +110,7 @@ async function handle새전문가질문제출() {
 <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handle약관동의팝업</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">const</span> 약관동의 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">약관동의_받아오기</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>약관동의<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token keyword">await</span> <span class="token function">약관동의_팝업열기</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+		<span class="token keyword">await</span> <span class="token function">약관동의_팝업열기</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h3>추상화</h3>
@@ -132,7 +132,12 @@ async function handle새전문가질문제출() {
 </ul>
 <p>코드에 정답은 없으므로 명시적으로 팀원과 공유하는 것이 무엇보다 중요하다.</p>
 <h1>4. 끝맺음</h1>
-<p>실제 현업에서 코드를 작성할 때 어떤 부분에 대한 논의가 이루어지는지 궁금했는데, 조금이나마 담넘어로 배울 수 있었던 영상이었습니다. 클린코드에는 정답이 없지만, 클린 코드를 작성할 수 있는 좋은 방향성이 있는 것은 분명하다고 생각하고 합니다. 하나의 코드를 작성하더라도 ‘너물렀던 자리가 아름답도록’ 코드를 작성해보는 습관을 키워야할 것 같습니다.</p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
+<p>실제 현업에서 코드를 작성할 때 어떤 부분에 대한 논의가 이루어지는지 궁금했는데, 조금이나마 담넘어로 배울 수 있었던 영상이었습니다. 클린코드에는 정답이 없지만, 클린 코드를 작성할 수 있는 좋은 방향성이 있는 것은 분명하다고 생각하고 합니다. 하나의 코드를 작성하더라도 ‘너물렀던 자리가 아름답도록’ 코드를 작성해보는 습관을 키워야할 것 같습니다.</p>
+<br/>
+<h4>참고</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=edWbHp_k_9Y" target="_blank" rel="nofollow">토스ㅣSLASH 21 - 실무에서 바로 쓰는 Frontend Clean Code</a></li>
+</ul></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
       
       
       if(true) {

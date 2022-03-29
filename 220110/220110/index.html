@@ -8,8 +8,8 @@
 </blockquote>
 <p><br/><br/></p>
 <h1>2. DOM에 엘리먼트 렌더링하기</h1>
-<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, world</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
-ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, world</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
 <p><code class="language-text">ReactDOM.render()</code>는 전달한 컨테이너 노드의 콘텐츠를 제어합니다. 처음 호출할 때 기존의 DOM 엘리먼트를 교체하며 이후의 호출은 React의 DOM diffing 알고리즘을 사용하여 더욱 효율적으로 업데이트합니다.</p>
 <ul>
 <li>비교 알고리즘(Diffing Algorithm)</li>
@@ -24,10 +24,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, world!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
 <span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">It is </span><span class="token punctuation">{</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleTimeString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
 <span class="token plain-text">    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="gatsby-highlight-code-line">  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+<span class="gatsby-highlight-code-line">  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><span class="token punctuation">}</span>
 
-<span class="token function">setInterval</span><span class="token punctuation">(</span>tick<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<span class="token function">setInterval</span><span class="token punctuation">(</span>tick<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span></code></pre></div>
 <br/>
 <h2>리렌더링의 조건, 불변성</h2>
 <p>하나 더 짚고 넘어가야 할 개념이 있는데, 그것은 불변성입니다. React를 공부하다보면 ’<code class="language-text">불변성을 지켜야한다</code>’ 라는 말이 많이 나옵니다.</p>
@@ -39,7 +39,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p>React DOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교하고 DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트합니다.</p>
 <ul>
 <li>
-<p>엘리먼트의 타입이 다른 경우,  기존 트리에 해당하는 DOM 노드들은 삭제되고 새로운 DOM 노드들이 삽입됩니다.</p>
+<p>엘리먼트의 타입이 다른 경우, 기존 트리에 해당하는 DOM 노드들은 삭제되고 새로운 DOM 노드들이 삽입됩니다.</p>
 </li>
 <li>
 <p>같은 타입의 DOM 엘리먼트이나 속성값이 다른 경우, 동일한 부분은 유지하고 변경된 부분만 갱신합니다.</p>
@@ -49,13 +49,14 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 </li>
 </ul>
 <p>-> 자식 엘리먼트들을 대상을 동일한 과정을 재귀적으로 반복합니다.</p>
-<h1>5. 끝맺음</h1>
-<blockquote>
-<p><a href="https://ko.reactjs.org/docs/design-principles.html#gatsby-focus-wrapper" target="_blank" rel="nofollow">리액트: Design Principles</a>
-<a href="https://ko.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="nofollow">리액트: JSX 소개</a>
-<a href="https://ko.reactjs.org/docs/reconciliation.html" target="_blank" rel="nofollow">리액트: 재조정</a>
-<a href="https://helloworld.kurly.com/blog/thinking-in-react/" target="_blank" rel="nofollow">마켓컬리: React 이해하기</a></p>
-</blockquote></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
+<br/>
+<h4>참고</h4>
+<ul>
+<li><a href="https://ko.reactjs.org/docs/design-principles.html#gatsby-focus-wrapper" target="_blank" rel="nofollow">리액트: Design Principles</a></li>
+<li><a href="https://ko.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="nofollow">리액트: JSX 소개</a></li>
+<li><a href="https://ko.reactjs.org/docs/reconciliation.html" target="_blank" rel="nofollow">리액트: 재조정</a></li>
+<li><a href="https://helloworld.kurly.com/blog/thinking-in-react/" target="_blank" rel="nofollow">마켓컬리: React 이해하기</a></li>
+</ul></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
       
       
       if(true) {

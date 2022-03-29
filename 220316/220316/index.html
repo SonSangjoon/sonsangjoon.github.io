@@ -21,28 +21,28 @@
     answer <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     db <span class="token operator">=</span> defaultdict<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">for</span> user <span class="token keyword">in</span> info<span class="token punctuation">:</span>                
+    <span class="token keyword">for</span> user <span class="token keyword">in</span> info<span class="token punctuation">:</span>
         user_info <span class="token operator">=</span> user<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
         cond<span class="token punctuation">,</span> score  <span class="token operator">=</span> user_info<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>user_info<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 
-        <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>           
+        <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             comb <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>combinations<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 경우의 수</span>
             <span class="token keyword">for</span> c <span class="token keyword">in</span> comb<span class="token punctuation">:</span>
                 tmp <span class="token operator">=</span> cond<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                <span class="token keyword">for</span> i <span class="token keyword">in</span> c<span class="token punctuation">:</span>         
+                <span class="token keyword">for</span> i <span class="token keyword">in</span> c<span class="token punctuation">:</span>
                     tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'-'</span>
 
                 db_key <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
                 db<span class="token punctuation">[</span>db_key<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token comment"># 딕셔너리에 저장</span>
 
-    <span class="token keyword">for</span> value <span class="token keyword">in</span> db<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>          
+    <span class="token keyword">for</span> value <span class="token keyword">in</span> db<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         value<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
- 
-    <span class="token keyword">for</span> q <span class="token keyword">in</span> query<span class="token punctuation">:</span>                      
+
+    <span class="token keyword">for</span> q <span class="token keyword">in</span> query<span class="token punctuation">:</span>
         qry <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> q<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">if</span> i <span class="token operator">!=</span> <span class="token string">'and'</span><span class="token punctuation">]</span>
         cond<span class="token punctuation">,</span> score <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>qry<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>qry<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            
+
         data <span class="token operator">=</span> db<span class="token punctuation">[</span>cond<span class="token punctuation">]</span>
         answer<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">-</span>bisect_left<span class="token punctuation">(</span>data<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 이분탐색</span>
 

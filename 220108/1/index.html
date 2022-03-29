@@ -19,13 +19,11 @@ React에서는 본질적으로 렌더링 로직이 UI 로직
 연결되는 형태라고 생각할 수 있습니다.</p>
 <p>React는 별도의 파일에 마크업과 로직을 넣어 기술을 인위적으로 분리하는 대신, 둘 다 포함하는 “컴포넌트”라고 부르는 유닛으로 관심사를 분리합니다.</p>
 <p>아래의 예시와 같이, React를 통해 로직과 마크업이 하나의 유닛에 담기게 되는 것 또한 관심사의 분리(Separation of Concerns)의 한 예시라고 볼 수 있습니다. 이를 통해, 복잡한 웹페이지를 여러 컴포넌트로 나눠서 관심사를 분리할 수 있게 되는 것입니다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Button</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>text<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-	<span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> <span class="token punctuation">(</span>
-		<span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span><span class="token operator">></span> <span class="token punctuation">{</span>text<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
-	<span class="token punctuation">)</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Button</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> text <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span><span class="token operator">></span> <span class="token punctuation">{</span>text<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
 <span class="token punctuation">}</span></code></pre></div>
 <br/>
 <h3>선언형 프로그래밍</h3>
@@ -36,12 +34,12 @@ React에서는 본질적으로 렌더링 로직이 UI 로직
 <p>리액트의 설계철학 중 합성이 가장 눈에 들어왔던 것 같습니다. 결국 재사용성을 높이기 위해서는 합성과 분리를 용이하게 해야하는 것이 중요하며,
 이는 곧 관심사의 분리 밀접한 관계가 있다는 생각이 들었습니다. Data와 UI의 분리 그리고 컴포넌트간의 로직 분리등을 통해 리액트 컴포넌트를 구조화하는 것에 대해 고민할 수 있었습니다.</p>
 <br/>
-<h4>참고자료</h4>
-<blockquote>
-<p><a href="https://ko.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="nofollow">리액트: JSX 소개</a>
-<a href="https://ko.reactjs.org/docs/design-principles.html#gatsby-focus-wrapper" target="_blank" rel="nofollow">리액트: Design Principles</a>
-<a href="https://helloworld.kurly.com/blog/thinking-in-react/" target="_blank" rel="nofollow">마켓컬리: React 이해하기</a></p>
-</blockquote></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
+<h4>참고</h4>
+<ul>
+<li><a href="https://ko.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="nofollow">리액트: JSX 소개</a></li>
+<li><a href="https://ko.reactjs.org/docs/design-principles.html#gatsby-focus-wrapper" target="_blank" rel="nofollow">리액트: Design Principles</a></li>
+<li><a href="https://helloworld.kurly.com/blog/thinking-in-react/" target="_blank" rel="nofollow">마켓컬리: React 이해하기</a></li>
+</ul></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog<br/>© 2022 onshore, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F2FW9287D4"></script><script>
       
       
       if(true) {
